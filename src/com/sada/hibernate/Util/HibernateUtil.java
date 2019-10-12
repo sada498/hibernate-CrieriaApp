@@ -1,0 +1,26 @@
+package com.sada.hibernate.Util;
+
+
+
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+
+public class HibernateUtil {
+public static SessionFactory factory=null;
+public synchronized static SessionFactory getSessionFactory() {
+	if(factory==null)
+	{
+		Configuration conf=new Configuration();
+		conf.configure("com/sada/hibernate/conf/conf.cfg.xml");
+		 ServiceRegistry registry=new StandardServiceRegistryBuilder().applySettings(conf.getProperties()).build();
+		 factory=conf.buildSessionFactory(registry);
+	
+	}
+	return factory;	
+}
+private HibernateUtil() {
+
+}
+}

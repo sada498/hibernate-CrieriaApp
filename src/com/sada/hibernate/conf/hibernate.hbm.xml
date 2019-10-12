@@ -1,0 +1,11 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.sada.hibernate.model.Employee" table="employee">
+<id name="employeeNumber" column="empnumber"/>
+<property name="employeeName" column="empname" length="10"/>
+<property name="employeeSalary" column="empsalary"/>
+<property name="deptNumber" column="deptno"/>
+</class>
+</hibernate-mapping>
